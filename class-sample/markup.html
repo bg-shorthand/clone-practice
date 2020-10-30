@@ -19,10 +19,14 @@
         <nav class="member">
             <!-- 이것도 네비 아닌가? -->
             <ul>
-                <li><a href="#">홈</a></li><span aria-hidden="true">ㅣ</span>
-                <li><a href="#">로그인</a></li><span aria-hidden="true">ㅣ</span>
-                <li><a href="#">회원가입</a></li><span aria-hidden="true">ㅣ</span>
-                <li><a href="#">사이트맵</a></li><span aria-hidden="true">ㅣ</span>
+                <li><a href="#">홈</a></li>
+                <span aria-hidden="true">ㅣ</span>
+                <li><a href="#">로그인</a></li>
+                <span aria-hidden="true">ㅣ</span>
+                <li><a href="#">회원가입</a></li>
+                <span aria-hidden="true">ㅣ</span>
+                <li><a href="#">사이트맵</a></li>
+                <span aria-hidden="true">ㅣ</span>
                 <li><a href="#">english</a></li>
             </ul>
             <!-- 목록 사용 -->
@@ -30,8 +34,8 @@
         <h2 class="a11y-hidden">메인 메뉴</h2>
         <!-- 중제목2 히든 -->
         <nav class="menu">
-            <ul class="main-menu">
-                <li class="main-menu-act">
+            <ul class="main-menu clearfix">
+                <li>
                     <button>HTML에 대해</button>
                     <!-- 링크 기능이 아니므로 버튼 선택. -->
                     <ul class="sub-menu sub-menu1">
@@ -66,7 +70,7 @@
                         <li><a href="#">웹 접근성 품질마크</a></li>
                     </ul>
                 </li>
-                <li>
+                <li class="main-menu-act">
                     <button>묻고 답하기</button>
                     <ul class="sub-menu sub-menu5">
                         <li><a href="#">묻고답하기</a></li>
@@ -105,11 +109,11 @@
                         <legend class="a11y-hidden">로그인</legend>
                         <div class="login-id">
                             <label for="loginId">아이디</label>
-                            <input type="email" id="loginId" placeholder="이메일">
+                            <input type="email" id="loginId" placeholder="이메일" required>
                         </div>
                         <div class="login-pwd">
                             <label for="loginPwd">비밀번호</label>
-                            <input type="password" id="loginPwd" placeholder="8자리 이상" minlength="8">
+                            <input type="password" id="loginPwd" placeholder="8자리 이상" minlength="8" required>
                         </div>
                         <button type="submit" class="login-btn">로그인</button>
                     </fieldset>
@@ -131,14 +135,17 @@
                 </ul>
                 <!-- 사이트 목록 ul, 링크 a -->
             </section>
-            <article class="web-term">
+            <article class="term">
                 <!-- 독립된 콘텐츠로 아티클 -->
-                <h2 class="a11y-hidden">Web Term</h2>
+                <h2>웹 관련 용어</h2>
                 <!-- 제목2 -->
-                <dl>웹 관련 용어
-                    <dt>웹 표준이란?</dt>
-                    <dd>W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...</dd>
-                    <dd><img src="./exHTML5/images/web_standards.gif" alt="W3C logo"></dd>
+                <dl>
+                    <div class="term-list">
+                        <dt>웹 표준이란?</dt>
+                        <dd class="term-p">W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...</dd>
+                        <dd class="term-img"><img src="./exHTML5/images/web_standards.gif" alt="W3C logo"></dd>
+                    </div>
+                    
                 </dl>
                 <!-- 용어 정의 리스트 -->
             </article>
@@ -147,87 +154,92 @@
             <section class="search">
                 <h2 class="a11y-hidden">검색</h2>
                 <!-- 섹션 -->
-                <form action="#">
+                <form action="#" id="totalSearch">
                     <fieldset>
                         <legend class="a11y-hidden">자료검색</legend>
-                        <label>자료검색<input type="search" placeholder="검색어를 입력하세요."></label>
-                        <label><input type="submit" name="search" value="검색"></label>
+                        <label for="searchBar">자료검색</label>
+                        <input type="search" id="searchBar" placeholder="검색어를 입력하세요">
+                        <button type="submit" value="검색" for="totalSearch">검색</button>
                     </fieldset>
                 </form>
                 <!-- 검색 폼 -->
             </section>
-            <section class="notice">
-                <h2>공지사항</h2>
-                <!-- 제목2 -->
-                <ul>
-                    <li><a href="#">HTML의 모든 것을 알려주마 샘플 활용법</a><time datetime="2018-5-31">2018.05.31</time></li>
-                    <li><a href="#">W3C 사이트 리뉴얼 및 공지사항</a><time datetime="2018-5-31">2018.05.31</time></li>
-                    <li><a href="#">KWCAG 2.1 소식</a><time datetime="2018-5-31">2018.05.31</time></li>
-                    <li><a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a><time datetime="2018-5-31">2018.05.31</time></li>
-                    <li><a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기...</a><time datetime="2018-5-31">2018.05.31</time></li>
-                </ul>
-                <a href="#">더보기</a>
-                <!-- 공지사항 리스트 ul, 더보기는 링크 a -->
-            </section>
-            <section class="data">
-                <h2>자료실</h2>
-                <ul>
-                    <li><a href="#">디자인 사이트 링크 모음</a><time datetime="2018-5-31">2018.05.31</time></li>
-                    <li><a href="#">웹 접근성 관련 자료 모음</a><time datetime="2018-5-31">2018.05.31</time></li>
-                    <li><a href="#">예제 샘플 응용해보기</a><time datetime="2018-5-31">2018.05.31</time></li>
-                    <li><a href="#">웹 접근성 향상을 위한 국가 표준 기술 가이드라인</a><time datetime="2018-5-31">2018.05.31</time></li>
-                    <li><a href="#">로얄티 프리 이미지 자료</a><time datetime="2018-5-31">2018.05.31</time></li>
-                </ul>
-                <a href="#">더보기</a>
-            </section>
-            <!-- 공지사항과 자료실이 붙어 있지만 내용이 다르므로 섹션으로 구분 -->
+            <div class="notice-data">
+                <section class="notice">
+                    <h2 id="noticeHeading">공지사항</h2>
+                    <!-- 제목2 -->
+                    <ul>
+                        <li><a href="#">HTML의 모든 것을 알려주마 샘플 활용법</a><time datetime="2018-5-31">2018.05.31</time></li>
+                        <li><a href="#">W3C 사이트 리뉴얼 및 공지사항</a><time datetime="2018-5-31">2018.05.31</time></li>
+                        <li><a href="#">KWCAG 2.1 소식</a><time datetime="2018-5-31">2018.05.31</time></li>
+                        <li><a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a><time datetime="2018-5-31">2018.05.31</time></li>
+                        <li><a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기...</a><time datetime="2018-5-31">2018.05.31</time></li>
+                    </ul>
+                    <a class="notice-more" href="#" aria-labelledby="noticeHeading" title="공지사항">더보기</a>
+                    <!-- 공지사항 리스트 ul, 더보기는 링크 a -->
+                </section>
+                <section class="data n-d-act">
+                    <h2 id="dataHeading">자료실</h2>
+                    <ul>
+                        <li><a href="#">디자인 사이트 링크 모음</a><time datetime="2018-5-31">2018.05.31</time></li>
+                        <li><a href="#">웹 접근성 관련 자료 모음</a><time datetime="2018-5-31">2018.05.31</time></li>
+                        <li><a href="#">예제 샘플 응용해보기</a><time datetime="2018-5-31">2018.05.31</time></li>
+                        <li><a href="#">웹 접근성 향상을 위한 국가 표준 기술 가이드라인입니다.</a><time datetime="2018-5-31">2018.05.31</time></li>
+                        <li><a href="#">로얄티 프리 이미지 자료</a><time datetime="2018-5-31">2018.05.31</time></li>
+                    </ul>
+                    <a class="data-more" href="#" aria-labelledby="dataHeading" title="자료실">더보기</a>
+                </section>
+                <!-- 공지사항과 자료실이 붙어 있지만 내용이 다르므로 섹션으로 구분 -->
+            </div>
             <section class="news">
-                <h2>새소식</h2>
+                <h2 class="news-heading">새소식</h2>
                 <a href="#">
-                    <h3>W3C 사이트가 리뉴얼 되었습니다.</h3>
-                    <p>
+                    <h3 class="news-subject">W3C 사이트가 리뉴얼 되었습니다.</h3>
+                    <p class="news-brief">
                         <time datetime="2018-5-31">2018.05.31</time>
                         디자인 및 다양한 view 환경을 고려하여 구성되어 있으며, 기존보다 최신 정보 및 개발자를 위한 기술 가이드도 찾기 쉽도록 구성되어 있습니다.
                     </p>
-                    <figure>
+                    <figure class="news-thumbnail">
                         <img src="./exHTML5/images/news.gif" alt="W3C 홈페이지 리뉴얼 모습">
                         <figcaption>W3C 리뉴얼</figcaption>
                     </figure>
                 </a>
-                <a href="#">더보기</a>
+                <a class="news-more" href="#">더보기</a>
                 <!-- h2아래 h3, p 를 둬서 새소식 한 묶음. figure로 이미지와 이미지 설명(figure는 참조. 주 문서 아님.) -->
             </section>
         </div>
         <div class="right">
-            <aside class="event">
-                <h2 class="event">신규 이벤트</h2>
-                <figure>
-                    <img src="./exHTML5/images/free_gift.gif" alt="웹표준 핵심 가이드북 2 출시 기념 이벤트">
-                    <figcaption>웹표준 핵심 가이드북 2 출시! 선착순 500명 한정으로 증정.</figcaption>
-                </figure>
-                <button>\fontello</button>
-                <button>\fontello</button>
-                <!-- 이벤트 광고 aside, 제목, 이미지와 이미지 설명 figure, 이전/다음 기능 버튼 -->
-            </aside>
-            <section class="recomand-site">
-                <h2>관련 사이트</h2>
-                <ul>
-                    <li><a href="#">멀티캠퍼스</a></li>
-                    <li><a href="#">W3C</a></li>
-                    <li><a href="#">CSS ZenGarden</a></li>
-                    <li><a href="#">웹접근성 연구소</a></li>
-                    <li><a href="#">Web Standards</a></li>
-                </ul>
-            </section>
-            <section class="popular-site">
-                <h2>인기 사이트</h2>
-                <ol>
-                    <li><a href="#">W3C</a></li>
-                    <li><a href="#">CSS Zen Garden</a></li>
-                    <li><a href="#">MDN</a></li>
-                    <li><a href="#">Web Standards</a></li>
+            <div class="event-related">
+                <section class="event">
+                    <h2 class="event-heading">신규 <span>이벤트</span></h2>
+                    <img class="event-img" src="./exHTML5/images/free_gift.gif" alt="경품 증정: 웹표준 핵심 가이드북 2">
+                    <p class="event-p">웹표준 핵심 가이드북 2 출시! 선착순 500명 한정으로 증정.</p>
+                    <div class="event-btn">
+                        <button class="pre-btn icon-left-open">이전 이벤트</button>
+                        <button class="next-btn icon-right-open">다음 이벤트</button>
+                    </div>
+                </section>
+                <section class="related">
+                    <h2 class="related-heading">관련 <span>사이트</span></h2>
+                    <ul class="related-list">
+                        <li><a href="#">멀티캠퍼스</a></li>
+                        <li><a href="#">W3C</a></li>
+                        <li><a href="#">CSS ZenGarden</a></li>
+                        <li><a href="#">웹접근성 연구소</a></li>
+                        <li><a href="#">Web Standards</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <section class="popular">
+                <h2 class="popular-heading">인기 <span>사이트</span></h2>
+                <ol class="popular-list">
+                    <li><a href="#">1. W3C</a><i class="i i1" aria-label="순위 상승"></i></li>
+                    <li><a href="#">2. CSS Zen Garden</a><i class="i i2" aria-label="순위 하락"></i></li>
+                    <li><a href="#">3. MDN</a><i class="i i3" aria-label="순위 유지"></i></li>
+                    <li><a href="#">4. Web Standards</a><i class="i i4" aria-label="순위 상승"></i></li>
                 </ol>
-                <a href="#">더보기</a>
+                <a class="popular-more" href="#">더보기</a>
             </section>
         </div>
     </main>
@@ -235,19 +247,21 @@
         <!-- 의미 없는 영역. css삽입 -->
     </div>
     <footer>
-        <section class="about-us">
-            <ul>
-                <li><a href="#">회사 소개</a></li>
-                <li><a href="#">개인정보 보호정책</a></li>
-                <li><a href="#">이메일주소 무단수집 거부</a></li>
-                <li><a href="#">CONTACT US</a></li>
-                <li><a href="#">SITE MAP</a></li>
-            </ul>
-            <!-- 제목 안 줌 -->
-        </section>
-        <address>서울시 강남구 역삼동 718-5 전화 : <a href="tel:+820234295114">02-3429-5114</a> email : <a
-                href="mailto:seulbinim@gmail.com">seulbinim@gmail.com</a></address>
-        <p>Copyright since © 2010 by Web Cafe CORPORATION ALL RIGHTS RESERVED.</p>
+        <div class="footer">
+            <section class="about-us">
+                <ul>
+                    <li><a href="#">회사 소개</a></li>
+                    <li><a href="#">개인정보 보호정책</a></li>
+                    <li><a href="#">이메일주소 무단수집 거부</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#">SITE MAP</a></li>
+                </ul>
+                <!-- 제목 안 줌 -->
+            </section>
+            <address>서울시 강남구 역삼동 718-5 전화 : <a href="tel:+820234295114">02-3429-5114</a> email : <a
+                    href="mailto:seulbinim@gmail.com">seulbinim@gmail.com</a></address>
+            <p>Copyright since © 2010 by Web Cafe CORPORATION ALL RIGHTS RESERVED.</p>
+        </div>
     </footer>
 </body>
 

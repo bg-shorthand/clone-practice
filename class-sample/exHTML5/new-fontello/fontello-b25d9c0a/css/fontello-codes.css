@@ -1,0 +1,5 @@
+
+.icon-plus:before { content: '\2b'; } /* '+' */
+.icon-right-open:before { content: '\e75e'; } /* '' */
+.icon-ok:before { content: '\e800'; } /* '' */
+.icon-circle:before { content: '\f111'; } /* '' */

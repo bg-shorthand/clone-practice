@@ -1,0 +1,8 @@
+
+.icon-plus:before { content: '\2b'; } /* '+' */
+.icon-left-open:before { content: '\e75d'; } /* '' */
+.icon-right-open:before { content: '\e75e'; } /* '' */
+.icon-ok:before { content: '\e800'; } /* '' */
+.icon-circle-empty:before { content: '\f10c'; } /* '' */
+.icon-circle:before { content: '\f111'; } /* '' */
+.icon-dot-circled:before { content: '\f192'; } /* '' */
